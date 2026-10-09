@@ -1,0 +1,103 @@
+:root {
+  --board: #16463b;
+  --board-dark: #0f3329;
+  --steel: #e8eeeb;
+  --paper: #ffffff;
+  --turmeric: #f0b323;
+  --chilli: #c4352b;
+  --ink: #17211e;
+  --muted: #5b6b66;
+  --line: #cdd8d3;
+  font-family: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--steel); color: var(--ink); line-height: 1.5; }
+button, input, select { font: inherit; }
+:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
+
+/* header */
+.topbar { background: var(--board); color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.topbar h1 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
+.topbar a { color: #fff; opacity: .8; text-decoration: none; }
+.topbar a:hover { opacity: 1; text-decoration: underline; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 24px; display: grid; grid-template-columns: 1fr 340px; gap: 28px; align-items: start; }
+
+/* menu board */
+.board { background: var(--board); color: #fff; border-radius: 6px; padding: 8px 28px 20px; border: 6px solid #8a6a3b; }
+.board h2 { font-size: 1.35rem; margin: 22px 0 6px; color: var(--turmeric); font-weight: 700; }
+.dish { display: flex; align-items: center; gap: 12px; padding: 9px 0; }
+.dish .info { flex: 1; min-width: 0; }
+.dish .name { font-weight: 600; }
+.dish .desc { font-size: .85rem; opacity: .7; }
+.dish .leader { flex: 0 0 40px; border-bottom: 2px dotted rgba(255,255,255,.35); align-self: center; }
+.dish .price { font-weight: 700; min-width: 3.5ch; text-align: right; }
+.dish.sold { opacity: .45; }
+.soldtag { font-size: .8rem; border: 1px solid #fff; border-radius: 3px; padding: 1px 6px; }
+
+.qty { display: inline-flex; align-items: center; gap: 6px; }
+.qty button { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--turmeric); color: var(--ink); font-weight: 800; cursor: pointer; }
+.qty button:disabled { opacity: .3; cursor: default; }
+.qty span { min-width: 1.5ch; text-align: center; font-weight: 700; }
+
+/* token slip */
+.slip { background: var(--paper); border: 2px dashed var(--ink); border-radius: 4px; padding: 20px; position: sticky; top: 16px; }
+.slip h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.slip .empty { color: var(--muted); }
+.slip ul { list-style: none; margin: 0 0 12px; padding: 0; }
+.slip li { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.slip .total { display: flex; justify-content: space-between; font-weight: 800; font-size: 1.1rem; margin: 10px 0 16px; }
+.slip label { display: block; font-size: .9rem; margin-bottom: 10px; }
+.slip input { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; margin-top: 3px; }
+.btn { width: 100%; padding: 12px; border: 0; border-radius: 4px; background: var(--chilli); color: #fff; font-weight: 700; cursor: pointer; }
+.btn:hover { background: #a82d24; }
+.btn.alt { background: var(--board); }
+.btn:disabled { opacity: .5; cursor: default; }
+.msg { margin-top: 10px; color: var(--chilli); font-weight: 600; min-height: 1.4em; }
+
+.token { text-align: center; padding: 8px 0 14px; }
+.token .label { color: var(--muted); font-size: .9rem; }
+.token .num { font-size: 4.5rem; font-weight: 800; line-height: 1; }
+.steps { display: flex; gap: 6px; margin: 14px 0; }
+.steps div { flex: 1; text-align: center; font-size: .8rem; padding: 6px 2px; border-radius: 4px; background: var(--steel); color: var(--muted); }
+.steps div.on { background: var(--board); color: #fff; font-weight: 700; }
+.steps div.done { background: var(--turmeric); color: var(--ink); }
+
+/* staff page */
+.staff { max-width: 1080px; margin: 0 auto; padding: 24px; }
+.tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.tabs button { padding: 8px 18px; border: 2px solid var(--board); background: transparent; border-radius: 4px; font-weight: 700; cursor: pointer; }
+.tabs button.on { background: var(--board); color: #fff; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.ticket { background: var(--paper); border: 2px dashed var(--ink); border-radius: 4px; padding: 14px; }
+.ticket .head { display: flex; justify-content: space-between; align-items: baseline; }
+.ticket .tk { font-size: 2rem; font-weight: 800; }
+.ticket .who { color: var(--muted); font-size: .9rem; margin-bottom: 6px; }
+.ticket ul { margin: 6px 0 10px; padding-left: 18px; }
+.ticket .actions { display: flex; gap: 6px; }
+.ticket .actions button { flex: 1; padding: 8px; border: 0; border-radius: 4px; cursor: pointer; font-weight: 700; background: var(--board); color: #fff; }
+.ticket .actions button.cancel { background: transparent; color: var(--chilli); border: 1px solid var(--chilli); flex: 0 0 auto; }
+.pill { font-size: .75rem; padding: 2px 8px; border-radius: 10px; background: var(--steel); font-weight: 700; }
+.pill.PLACED { background: var(--turmeric); }
+.pill.PREPARING { background: #f7d98a; }
+.pill.READY { background: #9fd8b8; }
+
+table { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: 4px; overflow: hidden; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { background: var(--board); color: #fff; }
+td button { padding: 5px 10px; margin-right: 4px; border-radius: 4px; border: 1px solid var(--board); background: transparent; cursor: pointer; }
+td button.del { color: var(--chilli); border-color: var(--chilli); }
+.addform { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; background: var(--paper); padding: 14px; border-radius: 4px; margin-bottom: 18px; }
+.addform input { padding: 8px; border: 1px solid var(--line); border-radius: 4px; }
+.gate { max-width: 360px; margin: 80px auto; background: var(--paper); padding: 24px; border-radius: 4px; border: 2px dashed var(--ink); }
+.gate input { width: 100%; padding: 8px; margin: 10px 0; border: 1px solid var(--line); border-radius: 4px; }
+.hidden { display: none; }
+
+@media (max-width: 820px) {
+  .wrap { grid-template-columns: 1fr; padding: 14px; }
+  .slip { position: static; }
+  .board { padding: 4px 16px 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .tabs button { transition: background .15s; }
+}

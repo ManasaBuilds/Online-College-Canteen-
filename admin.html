@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Canteen staff</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Canteen staff</h1>
+    <a href="index.html">Student view</a>
+  </header>
+
+  <div class="gate" id="gate">
+    <h2>Staff login</h2>
+    <label for="key">Staff key</label>
+    <input id="key" type="password" autocomplete="off">
+    <button class="btn alt" id="login">Log in</button>
+    <div class="msg" id="gatemsg"></div>
+  </div>
+
+  <main class="staff hidden" id="app">
+    <div class="tabs">
+      <button id="tab-orders" class="on">Live orders</button>
+      <button id="tab-menu">Menu</button>
+    </div>
+
+    <section id="orders"><div class="cards" id="cards"></div></section>
+
+    <section id="menusec" class="hidden">
+      <div class="addform">
+        <input id="n-name" placeholder="Item name">
+        <input id="n-cat" placeholder="Category (e.g. Snacks)">
+        <input id="n-desc" placeholder="Short description">
+        <input id="n-price" type="number" min="1" placeholder="Price (₹)">
+        <button class="btn alt" id="add">Add item</button>
+      </div>
+      <div class="msg" id="menumsg"></div>
+      <table>
+        <thead><tr><th>Item</th><th>Category</th><th>Price</th><th>Status</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
